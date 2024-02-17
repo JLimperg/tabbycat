@@ -14,18 +14,21 @@ ENV IN_DOCKER 1
 RUN git config --global url."https://".insteadOf git://
 
 # Setup Node/NPM
-RUN apt-get update
-RUN apt-get install -y curl nginx
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-RUN apt-get install -y nodejs
+RUN apt-get update && \
+    apt-get install -y curl nginx && \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs && \
+    apt-get clean
 
 # Install our node/python requirements
 RUN pip install pipenv
 ADD Pipfile Pipfile.lock /tcd/
-RUN pipenv install --system --deploy
+RUN pipenv install --system --deploy && \
+    pipenv --clear
 ADD package.json package-lock.json /tcd/
-RUN npm ci --omit=dev
-RUN npx update-browserslist-db@latest
+RUN npm ci --omit=dev && \
+    npx update-browserslist-db@latest && \
+    npm cache clean --force
 
 # Copy all our files
 ADD babel.config.js crowdin.yml ProcfileMulti.docker render.yaml vue.config.js /tcd/
