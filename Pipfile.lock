@@ -310,11 +310,12 @@
         },
         "django-ipware": {
             "hashes": [
-                "sha256:602a58325a4808bd19197fef2676a0b2da2df40d0ecf21be414b2ff48c72ad05",
-                "sha256:878dbb06a87e25550798e9ef3204ed70a200dd8b15e47dcef848cf08244f04c9"
+                "sha256:09c502ee3b1f8ae08d197d5e1f4397e965d0b201c83de7b5721db1fc460e6ab6",
+                "sha256:614d0f0a911f8a765e55b6d358b1715bb85eeb63d1ebb77447d09d645f1343e8"
             ],
             "index": "pypi",
-            "version": "==4.0.2"
+            "markers": "python_version >= '3.8'",
+            "version": "==6.0.4"
         },
         "django-jet-reboot": {
             "hashes": [
@@ -763,6 +764,14 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==0.19.3"
+        },
+        "python-ipware": {
+            "hashes": [
+                "sha256:1992920ef553165dfa35e6ea5a90762f64f3b943cc22ee6b4ec02e2c86d31178",
+                "sha256:9ba4805152ebb85ad5b53797185cd1ce6231e1db60155834f326c8cd61e8af34"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==2.0.1"
         },
         "pytz": {
             "hashes": [
